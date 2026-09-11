@@ -698,66 +698,216 @@ body.modal-open {
   transform: translateY(-2px);
 }
 
-/* =========================
-   CV SECTION
-========================= */
+```css
+/* ==============================
+   DOWNLOAD CV SECTION
+================================ */
 
 .cv-section {
-    padding: 80px 20px;
-    text-align: center;
+    padding: 100px 20px;
+    position: relative;
 }
 
-.cv-content {
-    max-width: 700px;
-    margin: auto;
+/* CARD */
+
+.cv-card {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 65px 50px;
+
+    text-align: center;
+
+    border-radius: 25px;
+    overflow: hidden;
+
+    background: #111;
+    color: #fff;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
 }
+
+/* ICON */
+
+.cv-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    font-size: 28px;
+
+    transition: 0.3s ease;
+}
+
+.cv-card:hover .cv-icon {
+    transform: translateY(-5px) rotate(-3deg);
+}
+
+/* LABEL */
 
 .cv-label {
     display: inline-block;
+
     margin-bottom: 12px;
-    font-size: 14px;
+
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 2px;
+
+    letter-spacing: 3px;
     text-transform: uppercase;
-    opacity: 0.7;
+
+    color: rgba(255, 255, 255, 0.6);
 }
 
-.cv-content h2 {
-    margin-bottom: 15px;
-    font-size: 38px;
+/* TITLE */
+
+.cv-card h2 {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 18px;
+
+    font-size: 42px;
     font-weight: 700;
+
+    letter-spacing: -1px;
 }
 
-.cv-content p {
+/* DESCRIPTION */
+
+.cv-card p {
+    position: relative;
+    z-index: 2;
+
     max-width: 600px;
-    margin: 0 auto 30px;
-    line-height: 1.7;
+
+    margin: 0 auto 35px;
+
     font-size: 16px;
-    opacity: 0.75;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* BUTTON */
+
+.cv-actions {
+    position: relative;
+    z-index: 5;
 }
 
 .download-cv {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
-    gap: 10px;
 
-    padding: 14px 28px;
+    gap: 12px;
+
+    padding: 15px 28px;
+
+    border-radius: 10px;
+
+    background: #fff;
+    color: #111;
 
     text-decoration: none;
+
     font-size: 15px;
     font-weight: 600;
 
-    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 
     transition: all 0.3s ease;
 }
 
-.download-cv:hover {
-    transform: translateY(-3px);
-}
-.contact-info i,
-.social-links a i {
-  transition: 0.3s;
+.download-cv i {
+    font-size: 18px;
 }
 
+.download-cv:hover {
+    transform: translateY(-4px);
+
+    background: #eaeaea;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* DECORATION */
+
+.cv-decoration {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    pointer-events: none;
+}
+
+.decoration-1 {
+    width: 280px;
+    height: 280px;
+
+    top: -150px;
+    right: -100px;
+}
+
+.decoration-2 {
+    width: 220px;
+    height: 220px;
+
+    bottom: -130px;
+    left: -80px;
+}
+
+/* HOVER CARD */
+
+.cv-card {
+    transition: transform 0.3s ease;
+}
+
+.cv-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    .cv-section {
+        padding: 70px 15px;
+    }
+
+    .cv-card {
+        padding: 50px 25px;
+        border-radius: 20px;
+    }
+
+    .cv-card h2 {
+        font-size: 32px;
+    }
+
+    .cv-card p {
+        font-size: 15px;
+    }
+
+    .download-cv {
+        width: 100%;
+        max-width: 250px;
+    }
+}
