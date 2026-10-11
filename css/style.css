@@ -698,216 +698,73 @@ body.modal-open {
   transform: translateY(-2px);
 }
 
-```css
-/* ==============================
-   DOWNLOAD CV SECTION
-================================ */
 
-.cv-section {
-    padding: 100px 20px;
-    position: relative;
+/* ===== DOWNLOAD CV BUTTON ===== */
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 11px 18px;
+  border: 1.5px solid #0f2027;
+  border-radius: 8px;
+
+  background: #0f2027;
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: all 0.3s ease;
 }
 
-/* CARD */
-
-.cv-card {
-    position: relative;
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 65px 50px;
-
-    text-align: center;
-
-    border-radius: 25px;
-    overflow: hidden;
-
-    background: #111;
-    color: #fff;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+.cv-button:hover {
+  background: transparent;
+  color: #0f2027;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(15, 32, 39, 0.12);
 }
-
-/* ICON */
 
 .cv-icon {
-    width: 65px;
-    height: 65px;
-
-    margin: 0 auto 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 18px;
-
-    background: rgba(255, 255, 255, 0.1);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-
-    font-size: 28px;
-
-    transition: 0.3s ease;
+  font-size: 19px;
+  line-height: 1;
+  transition: transform 0.3s ease;
 }
 
-.cv-card:hover .cv-icon {
-    transform: translateY(-5px) rotate(-3deg);
+.cv-button:hover .cv-icon {
+  transform: translateY(3px);
 }
 
-/* LABEL */
-
-.cv-label {
-    display: inline-block;
-
-    margin-bottom: 12px;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    letter-spacing: 3px;
-    text-transform: uppercase;
-
-    color: rgba(255, 255, 255, 0.6);
+/* Header layout */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
-/* TITLE */
-
-.cv-card h2 {
-    position: relative;
-    z-index: 2;
-
-    margin-bottom: 18px;
-
-    font-size: 42px;
-    font-weight: 700;
-
-    letter-spacing: -1px;
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
 }
 
-/* DESCRIPTION */
-
-.cv-card p {
-    position: relative;
-    z-index: 2;
-
-    max-width: 600px;
-
-    margin: 0 auto 35px;
-
-    font-size: 16px;
-    line-height: 1.8;
-
-    color: rgba(255, 255, 255, 0.65);
-}
-
-/* BUTTON */
-
-.cv-actions {
-    position: relative;
-    z-index: 5;
-}
-
-.download-cv {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 12px;
-
-    padding: 15px 28px;
-
-    border-radius: 10px;
-
-    background: #fff;
-    color: #111;
-
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-
-    transition: all 0.3s ease;
-}
-
-.download-cv i {
-    font-size: 18px;
-}
-
-.download-cv:hover {
-    transform: translateY(-4px);
-
-    background: #eaeaea;
-
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-}
-
-/* DECORATION */
-
-.cv-decoration {
-    position: absolute;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-
-    pointer-events: none;
-}
-
-.decoration-1 {
-    width: 280px;
-    height: 280px;
-
-    top: -150px;
-    right: -100px;
-}
-
-.decoration-2 {
-    width: 220px;
-    height: 220px;
-
-    bottom: -130px;
-    left: -80px;
-}
-
-/* HOVER CARD */
-
-.cv-card {
-    transition: transform 0.3s ease;
-}
-
-.cv-card:hover {
-    transform: translateY(-5px);
-}
-
-
-/* ==============================
-   RESPONSIVE
-================================ */
-
+/* Responsive */
 @media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
 
-    .cv-section {
-        padding: 70px 15px;
-    }
+  .cv-button {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
 
-    .cv-card {
-        padding: 50px 25px;
-        border-radius: 20px;
-    }
-
-    .cv-card h2 {
-        font-size: 32px;
-    }
-
-    .cv-card p {
-        font-size: 15px;
-    }
-
-    .download-cv {
-        width: 100%;
-        max-width: 250px;
-    }
+  .nav-links {
+    gap: 14px;
+  }
 }
