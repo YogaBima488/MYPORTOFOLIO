@@ -666,6 +666,135 @@ body.modal-open {
    KONTAK SECTION
 ========================= */
 
+/* LAYOUT: CONTACT LEFT, BUTTONS RIGHT */
+.kontak-portfolio-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 30px;
+  box-sizing: border-box;
+}
+
+/* LEFT SIDE */
+.kontak-portfolio-layout .kontak-section {
+  flex: 1 1 65%;
+  min-width: 0;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  clear: none;
+  background: transparent;
+}
+
+.kontak-portfolio-layout .kontak-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.kontak-portfolio-layout .kontak-section h2 {
+  text-align: left;
+}
+
+.kontak-portfolio-layout .kontak-desc {
+  text-align: left;
+  margin: 0 0 30px;
+}
+
+.kontak-portfolio-layout .kontak-info {
+  max-width: none;
+}
+
+/* RIGHT SIDE */
+.kontak-action-panel {
+  flex: 0 1 300px;
+  min-width: 220px;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.kontak-action-panel h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  color: #222831;
+}
+
+.kontak-action-panel > p {
+  margin: 0 0 24px;
+  color: #606975;
+  line-height: 1.7;
+}
+
+/* BUTTONS */
+.kontak-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.kontak-action-buttons .kontak-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  box-sizing: border-box;
+}
+
+.kontak-action-buttons .kontak-btn:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.kontak-action-buttons .kontak-btn-portfolio {
+  background: transparent;
+  color: #2563eb;
+}
+
+.kontak-action-buttons .kontak-btn-portfolio:hover {
+  background: #eff6ff;
+}
+
+/* TABLET AND MOBILE */
+@media (max-width: 768px) {
+  .kontak-portfolio-layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+    padding: 45px 20px;
+  }
+
+  .kontak-portfolio-layout .kontak-section {
+    width: 100%;
+  }
+
+  .kontak-action-panel {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
 .kontak-section {
   position: relative;
   display: block;
