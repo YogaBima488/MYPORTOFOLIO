@@ -598,7 +598,8 @@ body.modal-open {
   box-shadow: 0 10px 25px rgba(0,255,213,0.4);
 }
 
-/* CONTACT */
+```css
+/* ===== CONTACT SECTION ===== */
 .contact {
   padding: 100px 10%;
   background: #f7f7f7;
@@ -608,6 +609,7 @@ body.modal-open {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 15px;
+  color: #202124;
 }
 
 .contact-desc {
@@ -615,32 +617,53 @@ body.modal-open {
   color: #555;
   max-width: 600px;
   margin: 0 auto 60px;
+  line-height: 1.7;
 }
 
+/* ===== CONTACT LAYOUT ===== */
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
+  align-items: center;
+}
+
+.contact-info {
+  min-width: 0;
 }
 
 .contact-info p {
   margin-bottom: 20px;
   color: #333;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-top: 25px;
 }
 
 .social-links a {
   display: inline-block;
-  margin-right: 15px;
   text-decoration: none;
   color: #222;
   font-weight: 500;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #777;
+  color: #647f89;
 }
-```css
+
+.social-links a:focus-visible {
+  outline: 2px solid #647f89;
+  outline-offset: 4px;
+}
+
 /* ===== CV & PORTFOLIO ACTIONS ===== */
 .contact-actions {
   display: flex;
@@ -648,20 +671,23 @@ body.modal-open {
   gap: 16px;
   width: 100%;
   max-width: 430px;
+  min-width: 0;
 }
 
 .contact-action-btn {
   display: flex;
   align-items: center;
   gap: 15px;
+  box-sizing: border-box;
   width: 100%;
   padding: 18px;
   border-radius: 14px;
   text-decoration: none;
   text-align: left;
-  transition: transform 0.25s ease,
-              box-shadow 0.25s ease,
-              background 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
 .contact-action-btn > i:first-child {
@@ -693,6 +719,7 @@ body.modal-open {
   font-size: 0.95rem;
 }
 
+/* Tombol Download CV */
 .primary-btn {
   background: #0f2027;
   color: #fff;
@@ -705,6 +732,7 @@ body.modal-open {
   box-shadow: 0 10px 24px rgba(15, 32, 39, 0.15);
 }
 
+/* Tombol Portfolio */
 .secondary-btn {
   background: #fff;
   color: #202124;
@@ -717,13 +745,31 @@ body.modal-open {
   box-shadow: 0 10px 24px rgba(25, 32, 45, 0.07);
 }
 
+/* Keyboard Accessibility */
 .contact-action-btn:focus-visible {
   outline: 3px solid #7895a0;
   outline-offset: 4px;
 }
 
-/* Mobile */
+/* ===== TABLET & MOBILE ===== */
 @media (max-width: 768px) {
+  .contact {
+    padding: 70px 6%;
+  }
+
+  .contact-container h2 {
+    font-size: 2rem;
+  }
+
+  .contact-desc {
+    margin-bottom: 40px;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
   .contact-actions {
     max-width: 100%;
   }
@@ -734,9 +780,42 @@ body.modal-open {
   }
 }
 
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 400px) {
+  .contact {
+    padding: 55px 5%;
+  }
+
+  .contact-container h2 {
+    font-size: 1.8rem;
+  }
+
   .contact-action-btn {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+
+  .contact-action-btn > i:first-child {
+    font-size: 1.3rem;
+  }
+
+  .contact-action-btn strong {
+    font-size: 0.88rem;
+  }
+
+  .contact-action-btn small {
+    font-size: 0.72rem;
+  }
+
+  .action-icon {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .contact-action-btn,
+  .social-links a {
     transition: none;
   }
 
