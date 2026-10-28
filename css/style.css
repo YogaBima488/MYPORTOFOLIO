@@ -751,6 +751,95 @@ body.modal-open {
   outline-offset: 4px;
 }
 
+```css
+/* Contact buttons */
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 430px;
+}
+
+.contact-actions a.contact-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: left;
+  transition: 0.25s ease;
+}
+
+.contact-actions .contact-action-btn span {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: 5px;
+}
+
+.contact-actions .contact-action-btn strong {
+  display: block;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.contact-actions .contact-action-btn small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.contact-actions .contact-action-btn > i:first-child {
+  flex-shrink: 0;
+  font-size: 24px;
+}
+
+.contact-actions .action-icon {
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.contact-actions .primary-btn {
+  background: #0f2027;
+  color: #fff;
+  border: 1px solid #0f2027;
+}
+
+.contact-actions .primary-btn:hover {
+  background: #203943;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 32, 39, 0.15);
+}
+
+.contact-actions .secondary-btn {
+  background: #fff;
+  color: #202124;
+  border: 1px solid #e0e4e8;
+}
+
+.contact-actions .secondary-btn:hover {
+  background: #f1f4f6;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(25, 32, 45, 0.07);
+}
+
+/* Tampilan HP */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-actions {
+    max-width: 100%;
+  }
+}
+
 /* ===== TABLET & MOBILE ===== */
 @media (max-width: 768px) {
   .contact {
