@@ -524,8 +524,20 @@ body {
   }
 }
 
-/* Fokus keyboard */
 .back-circle:focus-visible {
   outline: 3px solid #647d8a;
   outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-item:active .overlay,
+  .gallery-item:focus-within .overlay {
+    opacity: 1;
+  }
 }
