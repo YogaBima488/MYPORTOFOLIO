@@ -598,71 +598,7 @@ body.modal-open {
   box-shadow: 0 10px 25px rgba(0,255,213,0.4);
 }
 
-/* ===== CONTACT SECTION ===== */
-.contact {
-  padding: 100px 10%;
-  background: #f7f7f7;
-}
-
-.contact-container h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #202124;
-}
-
-.contact-desc {
-  text-align: center;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto 60px;
-  line-height: 1.7;
-}
-
-/* ===== CONTACT LAYOUT ===== */
-.contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
-}
-
-.contact-info {
-  min-width: 0;
-}
-
-.contact-info p {
-  margin-bottom: 20px;
-  color: #333;
-  line-height: 1.7;
-  overflow-wrap: anywhere;
-}
-
-/* ===== SOCIAL LINKS ===== */
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 18px;
-  margin-top: 25px;
-}
-
-.social-links a {
-  display: inline-block;
-  text-decoration: none;
-  color: #222;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #647f89;
-}
-
-.social-links a:focus-visible {
-  outline: 2px solid #647f89;
-  outline-offset: 4px;
-}
-
+```css
 /* ===== CV & PORTFOLIO ACTIONS ===== */
 .contact-actions {
   display: flex;
@@ -673,7 +609,8 @@ body.modal-open {
   min-width: 0;
 }
 
-.contact-action-btn {
+/* Base button */
+.contact-actions .contact-action-btn {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -683,96 +620,19 @@ body.modal-open {
   border-radius: 14px;
   text-decoration: none;
   text-align: left;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+  cursor: pointer;
+  transition: background 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease;
 }
 
-.contact-action-btn > i:first-child {
+/* Main icon */
+.contact-actions .contact-action-btn > i:first-child {
   flex-shrink: 0;
   font-size: 1.5rem;
 }
 
-.contact-action-btn span {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
-  min-width: 0;
-}
-
-.contact-action-btn strong {
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.contact-action-btn small {
-  font-size: 0.78rem;
-  line-height: 1.5;
-  opacity: 0.8;
-}
-
-.action-icon {
-  flex-shrink: 0;
-  font-size: 0.95rem;
-}
-
-/* Tombol Download CV */
-.primary-btn {
-  background: #0f2027;
-  color: #fff;
-  border: 1px solid #0f2027;
-}
-
-.primary-btn:hover {
-  background: #203943;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(15, 32, 39, 0.15);
-}
-
-/* Tombol Portfolio */
-.secondary-btn {
-  background: #fff;
-  color: #202124;
-  border: 1px solid #e0e4e8;
-}
-
-.secondary-btn:hover {
-  background: #f1f4f6;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(25, 32, 45, 0.07);
-}
-
-/* Keyboard Accessibility */
-.contact-action-btn:focus-visible {
-  outline: 3px solid #7895a0;
-  outline-offset: 4px;
-}
-
-```css
-/* Contact buttons */
-.contact-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-  max-width: 430px;
-}
-
-.contact-actions a.contact-action-btn {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 18px;
-  border-radius: 14px;
-  text-decoration: none;
-  text-align: left;
-  transition: 0.25s ease;
-}
-
+/* Text container */
 .contact-actions .contact-action-btn span {
   display: flex;
   flex-direction: column;
@@ -781,28 +641,29 @@ body.modal-open {
   gap: 5px;
 }
 
+/* Button title */
 .contact-actions .contact-action-btn strong {
   display: block;
-  font-size: 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
   line-height: 1.4;
 }
 
+/* Button description */
 .contact-actions .contact-action-btn small {
   display: block;
-  font-size: 12px;
+  font-size: 0.78rem;
   line-height: 1.5;
+  opacity: 0.85;
 }
 
-.contact-actions .contact-action-btn > i:first-child {
-  flex-shrink: 0;
-  font-size: 24px;
-}
-
+/* Right-side icon */
 .contact-actions .action-icon {
   flex-shrink: 0;
-  font-size: 16px;
+  font-size: 0.95rem;
 }
 
+/* ===== DOWNLOAD CV BUTTON ===== */
 .contact-actions .primary-btn {
   background: #0f2027;
   color: #fff;
@@ -815,6 +676,7 @@ body.modal-open {
   box-shadow: 0 10px 24px rgba(15, 32, 39, 0.15);
 }
 
+/* ===== PORTFOLIO BUTTON ===== */
 .contact-actions .secondary-btn {
   background: #fff;
   color: #202124;
@@ -825,6 +687,75 @@ body.modal-open {
   background: #f1f4f6;
   transform: translateY(-3px);
   box-shadow: 0 10px 24px rgba(25, 32, 45, 0.07);
+}
+
+/* Remove default link colors and underline */
+.contact-actions a.contact-action-btn:link,
+.contact-actions a.contact-action-btn:visited {
+  text-decoration: none;
+}
+
+.contact-actions a.primary-btn:link,
+.contact-actions a.primary-btn:visited {
+  color: #fff;
+}
+
+.contact-actions a.secondary-btn:link,
+.contact-actions a.secondary-btn:visited {
+  color: #202124;
+}
+
+/* Keyboard accessibility */
+.contact-actions .contact-action-btn:focus-visible {
+  outline: 3px solid #7895a0;
+  outline-offset: 4px;
+}
+
+/* ===== TABLET & MOBILE ===== */
+@media (max-width: 768px) {
+  .contact-actions {
+    max-width: 100%;
+  }
+
+  .contact-actions .contact-action-btn {
+    padding: 16px;
+    gap: 12px;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 400px) {
+  .contact-actions .contact-action-btn {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+
+  .contact-actions .contact-action-btn > i:first-child {
+    font-size: 1.3rem;
+  }
+
+  .contact-actions .contact-action-btn strong {
+    font-size: 0.88rem;
+  }
+
+  .contact-actions .contact-action-btn small {
+    font-size: 0.72rem;
+  }
+
+  .contact-actions .action-icon {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .contact-actions .contact-action-btn {
+    transition: none;
+  }
+
+  .contact-actions .contact-action-btn:hover {
+    transform: none;
+  }
 }
 
 /* Tampilan HP */
