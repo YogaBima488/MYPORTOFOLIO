@@ -640,20 +640,109 @@ body.modal-open {
 .social-links a:hover {
   color: #777;
 }
-
-.contact-form input,
-.contact-form textarea {
+```css
+/* ===== CV & PORTFOLIO ACTIONS ===== */
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   width: 100%;
-  padding: 14px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 1rem;
+  max-width: 430px;
 }
 
-.contact-form textarea {
-  resize: none;
-  height: 140px;
+.contact-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: left;
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              background 0.25s ease;
+}
+
+.contact-action-btn > i:first-child {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+
+.contact-action-btn span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-action-btn strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.contact-action-btn small {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.action-icon {
+  flex-shrink: 0;
+  font-size: 0.95rem;
+}
+
+.primary-btn {
+  background: #0f2027;
+  color: #fff;
+  border: 1px solid #0f2027;
+}
+
+.primary-btn:hover {
+  background: #203943;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 32, 39, 0.15);
+}
+
+.secondary-btn {
+  background: #fff;
+  color: #202124;
+  border: 1px solid #e0e4e8;
+}
+
+.secondary-btn:hover {
+  background: #f1f4f6;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(25, 32, 45, 0.07);
+}
+
+.contact-action-btn:focus-visible {
+  outline: 3px solid #7895a0;
+  outline-offset: 4px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-actions {
+    max-width: 100%;
+  }
+
+  .contact-action-btn {
+    padding: 16px;
+    gap: 12px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .contact-action-btn {
+    transition: none;
+  }
+
+  .contact-action-btn:hover {
+    transform: none;
+  }
 }
 
 /* FOOTER */
